@@ -1,0 +1,41 @@
+/*
+	file needs to be included in any file that uses any of these mixins, (reference) means that it only loads what is used :)
+		@import (reference) "mixins";
+
+	mixins that should help, listed here:
+
+		.size(height, width);
+		    -> usage: specify a height and width (duh), defaults to 100%/100%
+
+		.center();
+		    -> usage: call it inside of a parent element to center all of it's children
+
+		.noselect();
+		    -> usage: call on an element that you want a user to be unable to highlight    
+
+*/
+
+
+// mixin for height/width shorthand
+// defaults to 100% 100%
+.size(@height: 100%; @width: 100%) {
+    height: @height;
+    width: @width;
+}
+
+// mixin to quickly center
+.center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// mixin to simplify no-select
+.noselect() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
